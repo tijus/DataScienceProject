@@ -1,0 +1,127 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Visualizations for word count</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	
+	<script>
+
+		$(document).ready(function(){
+			
+			var i = 0;
+			$(document).on("change","#queryBox", function(event){
+
+				var optionSelected = $("option:selected", this);
+    			var valueSelected = this.value;
+    			i = i+1;
+    			if(i>2)
+    				location.reload(true);
+    			
+				event.preventDefault();
+				switch(valueSelected) {
+					 case "tweets_wc":
+					  	wordCloud("tweets.tsv");
+					  	break;
+					 case "articles_wc":
+					  	wordCloud("articles.tsv");
+					  	break;
+					 case "tweets_co":
+					 	wordCloud("tweets_pair.tsv");
+					 	break;
+					 case "articles_co":
+					 	wordCloud("articles_pair.tsv");
+					 	break;
+					 case "tweetsw1":
+					 	wordCloud("tweetsw1.tsv");
+					 	break;
+					 case "articlesw1":
+					 	wordCloud("articlesw1.tsv");
+					 	break;
+					 case "tweets_wcw1":
+					    wordCloud("tweets_pairw1.tsv");
+					    break;
+					 case "articles_wcw1":
+					    wordCloud("articles_pairw1.tsv");
+					    break;
+					 case "na":
+					 	alert("Please select your query");
+					 	break;
+					}        
+			});
+			console.log(i);
+		});
+	</script>
+	
+	
+</head>
+
+
+<body>	
+
+
+<div class="container">
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="marchforourlives.html">#MarchForOurLives</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html" id="visualizations">Visualization</a></li>
+      <li><a href="#" id="wordclouds">Word Cloud</a></li>
+    </ul>
+  </div>
+</nav>
+<div style="padding: 0% 0% 0% 10%">
+	<div class="row">
+		<form class="form-inline">
+		  <div class="form-group">
+		    <select id="queryBox" class="form-control">
+		    	<option value="na">Select</option>	
+		      <option value="tweetsw1">Visualize Tweets wordcount for week 1</option>
+		      <option value="articlesw1">Visualize Articles wordcount for week 1</option>
+		      <option value="tweets_wcw1">Visualize Tweets co-occurences for week 1</option>
+		      <option value="articles_wcw1">Visualize Articles co-occurences for week 1</option>
+			  <option value="tweets_wc">Visualize Tweets wordcount</option>
+			  <option value="articles_wc">Visualize Articles wordcount</option>
+			  <option value="tweets_co">Visualize Tweet co-occurence</option>
+			  <option value="articles_co">Visualize Article co-occurence</option>
+			</select>
+		  </div>
+		</form>
+	</div>
+	<div class="row">
+	  <div class="col-md-6">
+	  	<h3>Word - Cloud A</h3>
+	  	
+	  </div>
+	  <div class="col-md-6">
+		<h3>Word - Cloud B</h3>  	
+	  </div>
+	</div>
+	
+
+</div>
+
+<div class="container">
+	<script src="http://d3js.org/d3.v3.js"></script>
+<script type="text/javascript" src="d3.layout.cloud.js"></script>		
+	<div id="word-count"></div>	
+	<script type="text/javascript" src="wordcloud.js"></script>
+	
+	<div id="colB" style="display: none"></div>
+		
+</div>	
+</div>
+
+</body>
+</html>

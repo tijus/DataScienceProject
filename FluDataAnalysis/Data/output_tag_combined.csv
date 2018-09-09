@@ -1,0 +1,51 @@
+state,frequency,category
+Alabama,50,1
+Alaska,10,0
+Arizona,89,2
+Arkansas,23,0
+California,434,14
+Colorado,60,2
+Connecticut,39,1
+Delaware,20,0
+Florida,230,7
+Georgia,161,5
+Hawaii,15,0
+Idaho,14,0
+Illinois,132,4
+Indiana,75,2
+Iowa,35,1
+Kansas,24,0
+Kentucky,43,1
+Louisiana,96,3
+Maine,15,0
+Maryland,95,3
+Massachusetts,95,3
+Michigan,111,3
+Minnesota,58,1
+Mississippi,16,0
+Missouri,45,1
+Montana,7,0
+Nebraska,17,0
+Nevada,43,1
+New Hampshire,9,0
+New Jersey,101,3
+New Mexico,18,0
+New York,357,11
+North Carolina,103,3
+North Dakota,4,0
+Ohio,145,4
+Oklahoma,43,1
+Oregon,49,1
+Pennsylvania,125,4
+Rhode Island,12,0
+South Carolina,42,1
+South Dakota,4,0
+Tennessee,58,1
+Texas,378,12
+Utah,25,0
+Vermont,4,0
+Virginia,97,3
+Washington,202,6
+West Virginia,6,0
+Wisconsin,48,1
+Wyoming,5,0
